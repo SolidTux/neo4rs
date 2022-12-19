@@ -1,7 +1,7 @@
 jobs:
   test_4_0:
     docker:
-      - image: cimg/rust:1.48.0
+      - image: cimg/rust:1.65.0
       - image: neo4j:4.0
         environment:
          - NEO4J_AUTH: "neo4j/neo"
@@ -10,7 +10,7 @@ jobs:
       - run: cargo test
   test_4_1:
     docker:
-      - image: cimg/rust:1.48.0
+      - image: cimg/rust:1.65.0
       - image: neo4j:4.1
         environment:
          - NEO4J_AUTH: "neo4j/neo"
@@ -19,7 +19,7 @@ jobs:
       - run: cargo test
   test_4_2:
     docker:
-      - image: cimg/rust:1.48.0
+      - image: cimg/rust:1.65.0
       - image: neo4j:4.2
         environment:
          - NEO4J_AUTH: "neo4j/neo"
