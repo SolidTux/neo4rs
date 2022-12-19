@@ -93,22 +93,22 @@ impl BoltInteger {
     }
 }
 
-impl Into<BoltInteger> for i64 {
-    fn into(self) -> BoltInteger {
-        BoltInteger::new(self)
+impl From<i64> for BoltInteger {
+    fn from(val: i64) -> Self {
+        BoltInteger::new(val)
     }
 }
 
-impl Into<i64> for BoltInteger {
-    fn into(self) -> i64 {
-        self.value
+impl From<BoltInteger> for i64 {
+    fn from(val: BoltInteger) -> Self {
+        val.value
     }
 }
 
 //TODO: use macros
-impl Into<BoltInteger> for i32 {
-    fn into(self) -> BoltInteger {
-        BoltInteger::new(self as i64)
+impl From<i32> for BoltInteger {
+    fn from(val: i32) -> Self {
+        BoltInteger::new(val as i64)
     }
 }
 
