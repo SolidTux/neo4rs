@@ -2,8 +2,6 @@ use std::{io, string::FromUtf8Error};
 
 use deadpool::managed::PoolError;
 
-use crate::types::{BoltDate, BoltType};
-
 pub type Result<T> = std::result::Result<T, Error>;
 
 #[derive(Debug, thiserror::Error)]
@@ -40,7 +38,11 @@ pub enum Error {
 
     #[error("received unknown message: {0}")]
     UnknownMessage(String),
+
+    #[error("conversion error")]
     ConversionError,
+
+    #[error("authentication error")]
     AuthenticationError(String),
 
     #[error("invalid {type_name} marker: {marker}")]
